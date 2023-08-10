@@ -37,12 +37,20 @@ function updateDisplay(){
                         <h2>Title: ${myLibrary[i].title}</h2>
                         <p>Author: ${myLibrary[i].author}</p>
                         <p>Number of pages ${myLibrary[i].pages}</p>
-                        <p>Status: ${(myLibrary[i].read) ? "Read" : "Not read yet"}</p>
+                        <p id="read_status_${i}">Status: ${(myLibrary[i].read) ? "Read" : "Not read yet"}</p>
                         <div class="item-button-container">
-                            <button>Change status</button>
-                            <button>Delete book</button>
+                            <button class="book-button change" onclick="changeReadStatus(${i})">Change status</button>
+                            <button class="book-button delete" onclick="deleteBook(${i})">Delete book</button>
                         </div>
                     </div>`;
         displayContainer.innerHTML+=sample;
     }
+}
+
+function changeReadStatus(index){
+
+}
+
+function deleteBook(index){
+    
 }
