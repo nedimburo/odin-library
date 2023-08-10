@@ -48,6 +48,19 @@ body{
     grid-template-rows: repeat(4, 1fr);
 }
 
+.book-item:not(:last-child){
+    border-bottom: 1px solid gray;
+}
+
+.book-item h2{
+    font-size: 36px;
+}
+
+.book-item p{
+    font-size: 22px;
+    align-self: center;
+}
+
 .item-button-container{
     grid-column: 2 / 3;
     grid-row: 1 / 5;
