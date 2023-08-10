@@ -28,7 +28,13 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary() {
-  // do stuff here
+    let newTitle=document.getElementById("title").value;
+    let newAuthor=document.getElementById("author").value;
+    let newPages=document.getElementById("pages").value;
+    let newStatus=document.getElementById("read").value;
+    let newBook=new Book(newTitle, newAuthor, newPages, newStatus);
+    myLibrary.push(newBook);
+    updateDisplay();
 }
 
 window.addEventListener("load", updateDisplay);
@@ -61,8 +67,10 @@ function createForm(){
                         <input type="text" name="author" id="author" required><br>
                         <label for="pages">Pages:</label>
                         <input type="number" name="pages" id="pages" min="1" required><br>
-                        <label for="read">Read:</label>
-                        <input type="checkbox" name="read" id="read">
+                        <label for="read" class="form-checkbox">Read?
+                            <input type="checkbox" name="read" id="read">
+                            <span class="input-checkbox-new"></span>
+                        </label>
                        </form>
                        <div id="form-button-container">
                         <button class="form-button darkgreen" type="submit" value="submit" onclick="addBookToLibrary()">Submit</button>

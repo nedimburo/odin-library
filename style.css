@@ -43,6 +43,31 @@ form input{
     background-color: #ededed;
 }
 
+.form-checkbox{
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding-left: 30px;
+}
+
+input[type=checkbox]{
+    visibility: hidden;
+}
+
+.input-checkbox-new{
+    position: absolute;
+    top: 2px;
+    left: 0;
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    border: 1px solid darkgray;
+}
+
+.form-checkbox input:checked ~ .input-checkbox-new{
+    background-color: dodgerblue;
+}
+
 #form-button-container{
     margin-top: 25px;
     display: flex;
