@@ -19,8 +19,12 @@ let myLibrary = [
     }
 ];
 
-function Book() {
+function Book(title, author, pages, read) {
   // the constructor...
+  this.title=title;
+  this.author=author;
+  this.pages=pages;
+  this.read=read;
 }
 
 function addBookToLibrary() {
@@ -36,7 +40,7 @@ function updateDisplay(){
         let sample=`<div class="book-item">
                         <h2>Title: "${myLibrary[i].title}"</h2>
                         <p>Author: ${myLibrary[i].author}</p>
-                        <p>Number of pages ${myLibrary[i].pages}</p>
+                        <p>Number of pages: ${myLibrary[i].pages}</p>
                         <p id="read_status_${i}">Status: ${(myLibrary[i].read) ? "Read" : "Not read yet"}</p>
                         <div class="item-button-container">
                             <button class="book-button change" onclick="changeReadStatus(${i})">Change Status</button>
@@ -45,6 +49,32 @@ function updateDisplay(){
                     </div>`;
         displayContainer.innerHTML+=sample;
     }
+}
+
+function createForm(){
+    let formDisplay=document.getElementById("form-container");
+    formDisplay.style.display="block";
+    let formGenerator=`<form id="submit-book-form">
+                        <label for="title">Title:</label>
+                        <input type="text" name="title" id="title" required><br>
+                        <label for="author">Author:</label>
+                        <input type="text" name="author" id="author" required><br>
+                        <label for="pages">Pages:</label>
+                        <input type="number" name="pages" id="pages" min="1" required><br>
+                        <label for="read">Read:</label>
+                        <input type="checkbox" name="read" id="read">
+                       </form>
+                       <div id="form-button-container">
+                        <button class="form-button darkgreen" type="submit" value="submit" onclick="addBookToLibrary()">Submit</button>
+                        <button class="form-button darkred" onclick="cancelBookAdd()">Cancel</button>
+                       </div>`;
+    formDisplay.innerHTML+=formGenerator;
+}
+
+function cancelBookAdd(){
+    let formDisplay=document.getElementById("form-container");
+    formDisplay.innerHTML="";
+    formDisplay.style.display="none";
 }
 
 function changeReadStatus(index){

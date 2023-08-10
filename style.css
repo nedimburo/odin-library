@@ -16,6 +16,55 @@ body{
     margin-bottom: 20px;
 }
 
+#form-container{
+    width: 500px;
+    background-color: white;
+    border: 5px solid black;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 15px;
+    box-shadow: 3px 3px 5px gray;
+    display: none;
+}
+
+form label{
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    padding-right: 10px;
+}
+
+form input{
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: #ededed;
+}
+
+#form-button-container{
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.form-button{
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    border: 2px solid black;
+}
+
+.darkgreen{
+    background-color: darkgreen;
+}
+
+.darkred{
+    background-color: darkred;
+}
+
 #add-button-container{
     display: flex;
     justify-content: center;
