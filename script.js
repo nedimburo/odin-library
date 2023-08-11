@@ -31,9 +31,21 @@ function addBookToLibrary() {
     let newTitle=document.getElementById("title").value;
     let newAuthor=document.getElementById("author").value;
     let newPages=document.getElementById("pages").value;
-    let newStatus=document.getElementById("read").value;
-    let newBook=new Book(newTitle, newAuthor, newPages, newStatus);
+    let newStatus=document.getElementById("read");
+    if (newTitle=="" || newAuthor=="" || newPages==""){
+        alert("Please enter information about the book.");
+        return;
+    }
+    let readStatus;
+    if (newStatus.checked){
+        readStatus=true;
+    }
+    else{
+        readStatus=false;
+    }
+    let newBook=new Book(newTitle, newAuthor, newPages, readStatus);
     myLibrary.push(newBook);
+    removeForm();
     updateDisplay();
 }
 
@@ -74,12 +86,12 @@ function createForm(){
                        </form>
                        <div id="form-button-container">
                         <button class="form-button darkgreen" type="submit" value="submit" onclick="addBookToLibrary()">Submit</button>
-                        <button class="form-button darkred" onclick="cancelBookAdd()">Cancel</button>
+                        <button class="form-button darkred" onclick="removeForm()">Cancel</button>
                        </div>`;
     formDisplay.innerHTML+=formGenerator;
 }
 
-function cancelBookAdd(){
+function removeForm(){
     let formDisplay=document.getElementById("form-container");
     formDisplay.innerHTML="";
     formDisplay.style.display="none";
