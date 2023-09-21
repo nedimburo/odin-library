@@ -38,6 +38,9 @@ class Book{
     set read(value){ this._read=value};
 }
 
+let addBookButton=document.getElementById("add-button");
+addBookButton.addEventListener("click", createForm);
+
 function addBookToLibrary() {
     let newTitle=document.getElementById("title").value;
     let newAuthor=document.getElementById("author").value;

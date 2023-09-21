@@ -6,7 +6,7 @@
 }
 
 body{
-    background-color: #ffe8ba;
+    background-color: #ffe0b5;
 }
 
 #main-title{
@@ -14,6 +14,7 @@ body{
     font-size: 48px;
     padding: 10px;
     margin-bottom: 20px;
+    color: #732D0A;
 }
 
 #form-container{
@@ -96,12 +97,20 @@ input[type=checkbox]{
     margin-bottom: 20px;
 }
 
-.add-button{
+#add-button{
     padding: 20px 80px;
     font-size: 26px;
-    border: 2px solid black;
-    background-color: white;
+    font-weight: 700;
+    border: 4px solid white;
+    background-color: #732D0A;
+    color: white;
     box-shadow: 3px 3px 6px gray;
+}
+
+#add-button:hover{
+    border: 4px solid black;
+    background-color: white;
+    color: black;
 }
 
 #container{
@@ -144,11 +153,18 @@ input[type=checkbox]{
 }
 
 .book-button{
-    background-color: darkred;
+    background-color: #732D0A;
     color: white;
-    border: 2px solid black;
+    border: 4px solid black;
+    border-radius: 10px;
     font-size: 26px;
     font-weight: 700;
+    box-shadow: 2px 2px 5px gray;
+}
+
+.book-button:hover{
+    background-color: #d1d5db;
+    color: black;
 }
 
 .book-button.change{
